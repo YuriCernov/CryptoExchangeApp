@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classNames</key>
+	<dict>
+		<key>NavigationBarFlowTests</key>
+		<dict>
+			<key>testNavigationBarAccountSelection()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.635915</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>ScrollingPerformanceTests</key>
+		<dict>
+			<key>testTradeHistoryDcrolling()</key>
+			<dict>
+				<key>com.apple.dt.XCTMetric_OSSignpost-Scroll_DraggingAndDeceleration.duration</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.483169</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testTradeHistoryScrolling()</key>
+			<dict>
+				<key>com.apple.dt.XCTMetric_OSSignpost-Scroll_DraggingAndDeceleration.duration</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.480238</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testTradeScrolling()</key>
+			<dict>
+				<key>com.apple.dt.XCTMetric_OSSignpost-Scroll_DraggingAndDeceleration.duration</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.477669</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testWalletsScrolling()</key>
+			<dict>
+				<key>com.apple.dt.XCTMetric_OSSignpost-Scroll_DraggingAndDeceleration.duration</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.997190</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
