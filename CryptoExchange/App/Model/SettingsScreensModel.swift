@@ -1,9 +1,9 @@
 import Foundation
 
-struct SettingsScreenTitle {
-    let settingsScreenTitle: String
+struct SettingsScreensTitle {
+    let settingsScreensTitle: String
 }
 
-struct SettingsScreenDescription {
-    let settingsScreenDescription: String
+struct SettingsScreensDescription {
+    let settingsScreensDescription: String
 }

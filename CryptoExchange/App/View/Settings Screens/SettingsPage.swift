@@ -109,200 +109,127 @@ private struct MainBottomTextStyle: View {
     }
 }
 
-//MARK: - ABOUT US CARD
+//MARK: - CARD
 
-private struct AboutUsCard: View {
+private struct Card<Destination: View>: View {
     
-    @State var isAboutUsScreenPresented = false
+    @State private var isPresented = false
+    
+    let cardMainText: String
+    let cardDateText: String
+    let cardBottomText: String
+    let destination: Destination
     
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
             HStack {
-                Button { isAboutUsScreenPresented = true }
+                Button { isPresented = true }
                 label: {
-                    MainTextStyle(text: "About Us")
+                    MainTextStyle(text: cardMainText)
                     Spacer()
-                }.sheet(isPresented: $isAboutUsScreenPresented) {
-                    AboutUsPage()
+                }.sheet(isPresented: $isPresented) {
+                    destination
                 }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
+                DateTextStyle(dateText: "(Last Update: \(cardDateText)")
             }
-            BottomTextStyle(bottomText: "We are new technology company, our App is perfect. And we love our clients.")
+            BottomTextStyle(bottomText: cardBottomText)
         }
         .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
         .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
         .background(DarkThemeMainCardColor)
         .clipShape(RoundedCorner(radius: 10))
         .shadow(radius: 1)
+    }
+}
+
+//MARK: - ABOUT US CARD
+
+private struct AboutUsCard: View {
+    var body: some View {
+        Card(
+            cardMainText: "About Us",
+            cardDateText: "2019/12/01",
+            cardBottomText: "We are new technology company, our App is perfect. And we love our clients.",
+            destination: AboutUsPage()
+        )
     }
 }
 
 //MARK: - PASSWORD CARD
 
 private struct PasswordCard: View {
-    
-    @State var isPasswordScreenPresented = false
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack {
-                Button { isPasswordScreenPresented = true }
-                label: {
-                    MainTextStyle(text: "Password")
-                    Spacer()
-                }.sheet(isPresented: $isPasswordScreenPresented) {
-                    PasswordPage()
-                }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
-            }
-            BottomTextStyle(bottomText: "Enhance your security with a strong and unique password for your Bitex accaunt.")
-        }
-        .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
-        .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
-        .background(DarkThemeMainCardColor)
-        .clipShape(RoundedCorner(radius: 10))
-        .shadow(radius: 1)
+        Card(
+            cardMainText: "Password",
+            cardDateText: "2019/12/01",
+            cardBottomText: "Enhance your security with a strong and unique password for your Bitex accaunt.",
+            destination: PasswordPage()
+        )
     }
 }
 
 //MARK: - BACKUP CODES CARD
 
 private struct BackupCodesCard: View {
-    
-    @State var isBackupCodesScreenPresented = false
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack {
-                Button { isBackupCodesScreenPresented = true }
-                label: {
-                    MainTextStyle(text: "Backup Codes")
-                    Spacer()
-                }.sheet(isPresented: $isBackupCodesScreenPresented) {
-                    BackupCodesPage()
-                }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
-            }
-            BottomTextStyle(bottomText: "This feature lets you use 10 one-time codes to log in or disable two-factor authentication when away from your phone.")
-        }
-        .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
-        .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
-        .background(DarkThemeMainCardColor)
-        .clipShape(RoundedCorner(radius: 10))
-        .shadow(radius: 1)
+        Card(
+            cardMainText: "Backup Codes",
+            cardDateText: "2019/12/01",
+            cardBottomText: "This feature lets you use 10 one-time codes to log in or disable two-factor authentication when away from your phone.",
+            destination: BackupCodesPage()
+        )
     }
 }
 
 //MARK: - TRUST IP AADDRESS CARD
 
 private struct TrustIPAddress: View {
-    
-    @State var isTrustIPAddressScreenPresented = false
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack {
-                Button { isTrustIPAddressScreenPresented = true }
-                label: {
-                    MainTextStyle(text: "Trust IP Address")
-                    Spacer()
-                }.sheet(isPresented: $isTrustIPAddressScreenPresented) {
-                    TrustIPAddressPage()
-                }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
-            }
-            BottomTextStyle(bottomText: "This security feature lets you to control who can access your Bitex account based on their IP addresses.")
-        }
-        .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
-        .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
-        .background(DarkThemeMainCardColor)
-        .clipShape(RoundedCorner(radius: 10))
-        .shadow(radius: 1)
+        Card(
+            cardMainText: "Trust IP Address",
+            cardDateText: "2019/12/01",
+            cardBottomText: "This security feature lets you to control who can access your Bitex account based on their IP addresses.",
+            destination: TrustIPAddressPage()
+        )
     }
 }
 
 //MARK: - SECURITY PHRASE CARD
 
 private struct SecurityPhrase: View {
-    
-    @State var isSecurityPhraseScreenPresented = false
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack {
-                Button { isSecurityPhraseScreenPresented = true }
-                label: {
-                    MainTextStyle(text: "Security Phrase")
-                    Spacer()
-                }.sheet(isPresented: $isSecurityPhraseScreenPresented) {
-                    SecurityPhrasePage()
-                }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
-            }
-            BottomTextStyle(bottomText: "You can review your account's security logs including the information below to better understand the actions you've performed in the last 90 days.")
-        }
-        .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
-        .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
-        .background(DarkThemeMainCardColor)
-        .clipShape(RoundedCorner(radius: 10))
-        .shadow(radius: 1)
+        Card(
+            cardMainText: "Security Phrase",
+            cardDateText: "2019/12/01",
+            cardBottomText: "You can review your account's security logs including the information below to better understand the actions you've performed in the last 90 days.",
+            destination: SecurityPhrasePage()
+        )
     }
 }
 
 //MARK: - POLICY CARD
 
 private struct Policy: View {
-    
-    @State var isPolicyScreenPresented = false
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack {
-                Button { isPolicyScreenPresented = true }
-                label: {
-                    MainTextStyle(text: "Policy")
-                    Spacer()
-                }.sheet(isPresented: $isPolicyScreenPresented) {
-                    PolicyPage()
-                }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
-            }
-            BottomTextStyle(bottomText: "You can read all about our Policy in the log of Policy.")
-        }
-        .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
-        .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
-        .background(DarkThemeMainCardColor)
-        .clipShape(RoundedCorner(radius: 10))
-        .shadow(radius: 1)
+        Card(
+            cardMainText: "Policy",
+            cardDateText: "2019/12/01",
+            cardBottomText: "You can read all about our Policy in the log of Policy.",
+            destination: PolicyPage()
+        )
     }
 }
 
 //MARK: - COMMENTS CARD
 
 private struct CommentsCard: View {
-    
-    @State var isCommentsScreenPresented = false
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack {
-                Button { isCommentsScreenPresented = true }
-                label: {
-                    MainTextStyle(text: "Comments")
-                    Spacer()
-                }.sheet(isPresented: $isCommentsScreenPresented) {
-                    CommentsView()
-                }
-                DateTextStyle(dateText: "(Last Update: 2019/12/01)")
-            }
-            BottomTextStyle(bottomText: "Enhance your security with a strong and unique password for your Bitex accaunt.")
-        }
-        .padding([.top, .bottom], 10).padding([.leading, .trailing], 20)
-        .frame(minWidth: 365, maxWidth: 365, minHeight: 72)
-        .background(DarkThemeMainCardColor)
-        .clipShape(RoundedCorner(radius: 10))
-        .shadow(radius: 1)
-        Spacer().frame(height: 30)
+        Card(
+            cardMainText: "Comments",
+            cardDateText: "2019/12/01",
+            cardBottomText: "Enhance your security with a strong and unique password for your Bitex accaunt.",
+            destination: CommentsView()
+        )
     }
 }
 

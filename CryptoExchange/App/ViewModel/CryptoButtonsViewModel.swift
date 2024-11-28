@@ -4,7 +4,7 @@ import Foundation
 
 class CryptoButtonsViewModel: ObservableObject {
     
-//MARK: - Image
+    //MARK: - Image
     
     class CryptoButtonsImageViewModel: ObservableObject {
         
@@ -22,7 +22,7 @@ class CryptoButtonsViewModel: ObservableObject {
         }
     }
     
-//MARK: - Foreground Color
+    //MARK: - Foreground Color
     
     class CryptoButtonsForegroundColorViewModel: ObservableObject {
         
@@ -42,7 +42,7 @@ class CryptoButtonsViewModel: ObservableObject {
         }
     }
     
-//MARK: - Background Color
+    //MARK: - Background Color
     
     class CryptoButtonsBackgroundColorViewModel: ObservableObject {
         
@@ -63,7 +63,7 @@ class CryptoButtonsViewModel: ObservableObject {
         
     }
     
-//MARK: - Font Weight
+    //MARK: - Font Weight
     
     class CryptoButtonsFontWeightViewModel: ObservableObject {
         
@@ -80,6 +80,6 @@ class CryptoButtonsViewModel: ObservableObject {
             cryptoButtonFontWeight = CryptoButtonsFontWeight(cryptoButtonsFontWeight: newCryptoButtonsFontWeight)
         }
     }
-
+    
 }
 
