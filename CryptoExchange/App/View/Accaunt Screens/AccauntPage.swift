@@ -81,9 +81,21 @@ private struct ProfilePictureEditButton: View {
 private struct ProfileNameSurnameTitle: View {
     var body: some View {
         VStack(spacing: 5) {
-            MainCardStyle(mainText: "Name", descriptionText: "Yuri")
-            MainCardStyle(mainText: "Surname", descriptionText: "Cernov")
+            MainCardStyle(mainText: "Name", descriptionText: "Yuri", destination: EditProfileName())
+            MainCardStyle(mainText: "Surname", descriptionText: "Cernov", destination: EditProfileSurname())
         }
+    }
+}
+
+private struct EditProfileName: View {
+    var body: some View {
+        Text("Edit name")
+    }
+}
+
+private struct EditProfileSurname: View {
+    var body: some View {
+        Text("Edit surname")
     }
 }
 
@@ -92,9 +104,21 @@ private struct ProfileNameSurnameTitle: View {
 private struct ProfileEMailTitle: View {
     var body: some View {
         VStack(spacing: 5) {
-            MainCardStyle(mainText: "E-Mail", descriptionText: "jurij.cernovs@gmail.com")
-            MainCardStyle(mainText: "Second E-Mail", descriptionText: "cernovyury@gmail.com")
+            MainCardStyle(mainText: "E-Mail", descriptionText: "jurij.cernovs@gmail.com", destination: EditProfileMail())
+            MainCardStyle(mainText: "Second E-Mail", descriptionText: "cernovyury@gmail.com", destination: EditSecondProfileMail())
         }
+    }
+}
+
+private struct EditProfileMail: View {
+    var body: some View {
+        Text("Edit mail")
+    }
+}
+
+private struct EditSecondProfileMail: View {
+    var body: some View {
+        Text("Edit second mail")
     }
 }
 
@@ -103,9 +127,21 @@ private struct ProfileEMailTitle: View {
 private struct ProfilePasswordIdTitle: View {
     var body: some View {
         VStack(spacing: 5) {
-            MainCardStyle(mainText: "Password", descriptionText: "**************")
-            MainCardStyle(mainText: "ID", descriptionText: "84bnf939d388")
+            MainCardStyle(mainText: "Password", descriptionText: "**************", destination: EditProfilePassword())
+            MainCardStyle(mainText: "ID", descriptionText: "84bnf939d388", destination: EditProfileId())
         }
+    }
+}
+
+private struct EditProfilePassword: View {
+    var body: some View {
+        Text("Edit password")
+    }
+}
+
+private struct EditProfileId: View {
+    var body: some View {
+        Text("Edit ID")
     }
 }
 
@@ -134,10 +170,11 @@ private struct ProfileRegisteredDate: View {
 
 //MARK: - MAIN CARD STYLE
 
-private struct MainCardStyle: View {
+private struct MainCardStyle<Destination: View>: View {
     
     let mainText: String
     let descriptionText: String
+    let destination: Destination
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
@@ -149,7 +186,7 @@ private struct MainCardStyle: View {
                     .foregroundColor(DarkThemeStandartTextColor)
                     .font(Font.custom("ubuntu-regular", size: 17))
                 Spacer()
-                Button { print("Edit E-Mail") }
+                Button { destination }
                 label: {
                     Text("Edit")
                         .foregroundColor(DarkThemeMainLightColor)
