@@ -2,7 +2,9 @@ import SwiftUI
 
 struct PasswordPage: View {
     
-    let passwordTitle = SettingsScreensTitle(settingsScreensTitle: "Password")
+    let passwordTitle = SettingsScreensTitle(
+        settingsScreensTitle: "Password"
+    )
     let passwordDescription = SettingsScreensDescription(settingsScreensDescription:
             """
             At SecureVault, we take password security seriously. Our platform encourages the use of strong, unique passwords to ensure the safety of your online accounts. When creating a password, we recommend using a combination of uppercase and lowercase letters, numbers, and special characters. To further enhance security, we support multi-factor authentication (MFA) and password generation tools that help you create unguessable credentials.
@@ -14,12 +16,21 @@ struct PasswordPage: View {
     var body: some View {
         VStack {
             VStack {
+                
                 Spacer().frame(height: 50)
+                
                 SettingsScreensView(
-                    viewModelTitle: SettingsScreensViewModel.SettingsScreensTitleViewModel(settingsScreensTitle: passwordTitle),
-                    viewModelDescription: SettingsScreensViewModel.SettingsScreensDescriptionViewModel(settingsScreensDescription: passwordDescription))
+                    viewModelTitle: SettingsScreensViewModel.SettingsScreensTitleViewModel(
+                        settingsScreensTitle: passwordTitle
+                    ),
+                    viewModelDescription: SettingsScreensViewModel.SettingsScreensDescriptionViewModel(
+                        settingsScreensDescription: passwordDescription
+                    )
+                )
+                
                 Spacer()
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
         }
         .background(DarkThemeMainBackgroundColor)
         .ignoresSafeArea(.container, edges: .bottom)

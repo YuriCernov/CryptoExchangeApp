@@ -4,8 +4,11 @@ struct TradeHistoryPage: View {
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 0) {
+                
                 NavigationBar()
+                
                 Spacer().frame(height: 10)
+                
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(0..<20, id: \.self) { _ in
@@ -13,8 +16,11 @@ struct TradeHistoryPage: View {
                         }
                     }
                 }
+                
                 Spacer().frame(height: 90)
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
+            
             Spacer()
         }
         .background(DarkThemeMainBackgroundColor)
@@ -27,22 +33,46 @@ struct TradeHistoryPage: View {
 struct TradeHistoryButtons: View {
     var body: some View {
         VStack(spacing: -15) {
+            
             HStack(alignment: .top) {
-                CoinIcons(image: "bitcoinsign", background: BitcoinBackgroundColor, width: 35, height: 35)
+                CoinIcons(
+                    image: "bitcoinsign",
+                    background: BitcoinBackgroundColor,
+                    width: 35,
+                    height: 35
+                )
                     .padding(.trailing, 17)
+                
                 CoinsTitle(coinPair: "BTC/USD")
+                
                 Spacer()
+                
                 CoinsLine()
+                
                 CoinPercent()
-            }.padding([.leading, .trailing], 10)
+            }
+            .padding([.leading, .trailing], 10)
+            
             HStack(alignment: .center) {
-                CoinIcons(image: "dollarsign", background: DollarBackgroundColor, width: 25, height: 25)
+                CoinIcons(
+                    image: "dollarsign",
+                    background: DollarBackgroundColor,
+                    width: 25,
+                    height: 25
+                )
                     .padding(.trailing, 2)
+                
                 BetCountCoin(count: "109000.90000076 BTC")
+                
                 Spacer()
+                
                 BetCountCoin(count: "0.00112300 USD")
-                MoreInfoButton().padding([.leading, .trailing], 10)
-            }.padding(.leading, 35)
+                
+                MoreInfoButton()
+                    .padding([.leading, .trailing], 10)
+            }
+            .padding(.leading, 35)
+            
         }
         .frame(width: 365, height: 62)
         .background(DarkThemeMainCardColor)

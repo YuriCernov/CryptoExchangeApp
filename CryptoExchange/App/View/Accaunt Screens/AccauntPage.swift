@@ -4,32 +4,72 @@ struct AccauntPage: View {
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 0) {
+                
                 Spacer().frame(height: 10)
+                
                 ScrollView(showsIndicators: false) {
+                    
                     VStack(spacing: -30) {
                         ProfilePicture(rectagnleSize: 165, imageSize: 150)
                         ProfilePictureEditButton()
                     }
+                    
                     Spacer().frame(height: 20)
-                    Divider().frame(height: 1).background(DarkThemeDividerColor).padding([.leading, .trailing], 20)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(DarkThemeDividerColor)
+                        .padding([.leading, .trailing], 20)
+                    
                     Spacer().frame(height: 10)
+                    
                     ProfileNameSurnameTitle()
+                    
                     Spacer().frame(height: 10)
-                    Divider().frame(height: 1).background(DarkThemeDividerColor).padding([.leading, .trailing], 20)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(DarkThemeDividerColor)
+                        .padding([.leading, .trailing], 20)
+                    
                     Spacer().frame(height: 10)
+                    
                     ProfileEMailTitle()
+                    
                     Spacer().frame(height: 10)
-                    Divider().frame(height: 1).background(DarkThemeDividerColor).padding([.leading, .trailing], 20)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(DarkThemeDividerColor)
+                        .padding([.leading, .trailing], 20)
+                    
                     Spacer().frame(height: 10)
+                    
                     ProfilePasswordIdTitle()
+                    
                     Spacer().frame(height: 10)
-                    Divider().frame(height: 1).background(DarkThemeDividerColor).padding([.leading, .trailing], 20)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(DarkThemeDividerColor)
+                        .padding([.leading, .trailing], 20)
+                    
                     Spacer().frame(height: 10)
+                    
                     ProfileRegisteredDate()
+                    
                     Spacer().frame(height: 10)
-                    Divider().frame(height: 1).background(DarkThemeDividerColor).padding([.leading, .trailing], 20)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(DarkThemeDividerColor)
+                        .padding([.leading, .trailing], 20)
+                    
                 }
-            }.frame(maxWidth: .infinity)
+                
+            }
+            .frame(maxWidth: .infinity)
+            
             Spacer()
         }
         .background(DarkThemeMainBackgroundColor)
@@ -56,7 +96,6 @@ struct ProfilePicture: View {
                 .frame(width: imageSize, height: imageSize)
                 .clipShape(RoundedCorner(radius: 90))
                 .shadow(radius: 1)
-            
         }
     }
 }
@@ -81,8 +120,16 @@ private struct ProfilePictureEditButton: View {
 private struct ProfileNameSurnameTitle: View {
     var body: some View {
         VStack(spacing: 5) {
-            MainCardStyle(mainText: "Name", descriptionText: "Yuri", destination: EditProfileName())
-            MainCardStyle(mainText: "Surname", descriptionText: "Cernov", destination: EditProfileSurname())
+            MainCardStyle(
+                mainText: "Name",
+                descriptionText: "Yuri",
+                destination: EditProfileName()
+            )
+            MainCardStyle(
+                mainText: "Surname",
+                descriptionText: "Cernov",
+                destination: EditProfileSurname()
+            )
         }
     }
 }
@@ -104,8 +151,16 @@ private struct EditProfileSurname: View {
 private struct ProfileEMailTitle: View {
     var body: some View {
         VStack(spacing: 5) {
-            MainCardStyle(mainText: "E-Mail", descriptionText: "jurij.cernovs@gmail.com", destination: EditProfileMail())
-            MainCardStyle(mainText: "Second E-Mail", descriptionText: "cernovyury@gmail.com", destination: EditSecondProfileMail())
+            MainCardStyle(
+                mainText: "E-Mail",
+                descriptionText: "jurij.cernovs@gmail.com",
+                destination: EditProfileMail()
+            )
+            MainCardStyle(
+                mainText: "Second E-Mail",
+                descriptionText: "cernovyury@gmail.com",
+                destination: EditSecondProfileMail()
+            )
         }
     }
 }
@@ -127,8 +182,16 @@ private struct EditSecondProfileMail: View {
 private struct ProfilePasswordIdTitle: View {
     var body: some View {
         VStack(spacing: 5) {
-            MainCardStyle(mainText: "Password", descriptionText: "**************", destination: EditProfilePassword())
-            MainCardStyle(mainText: "ID", descriptionText: "84bnf939d388", destination: EditProfileId())
+            MainCardStyle(
+                mainText: "Password",
+                descriptionText: "**************",
+                destination: EditProfilePassword()
+            )
+            MainCardStyle(
+                mainText: "ID",
+                descriptionText: "84bnf939d388",
+                destination: EditProfileId()
+            )
         }
     }
 }
@@ -150,20 +213,25 @@ private struct EditProfileId: View {
 private struct ProfileRegisteredDate: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
+            
             Text("Registered Date")
                 .foregroundColor(DarkThemeDescriptionTextColor)
                 .font(Font.custom("ubuntu-regular", size: 12))
+            
             HStack {
                 Text("18.05.2017")
                     .foregroundColor(DarkThemeStandartTextColor)
                     .font(Font.custom("ubuntu-regular", size: 17))
+                
                 Spacer()
+                
             }
             .padding([.leading, .trailing], 20)
             .frame(width: 365, height: 50)
             .background(DarkThemeMainCardColor)
             .clipShape(RoundedCorner(radius: 10))
             .shadow(radius: 1)
+            
         }
     }
 }
@@ -178,26 +246,32 @@ private struct MainCardStyle<Destination: View>: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
+            
             Text(mainText)
                 .foregroundColor(DarkThemeDescriptionTextColor)
                 .font(Font.custom("ubuntu-regular", size: 12))
+            
             HStack {
                 Text(descriptionText)
                     .foregroundColor(DarkThemeStandartTextColor)
                     .font(Font.custom("ubuntu-regular", size: 17))
+                
                 Spacer()
+                
                 Button { destination }
                 label: {
                     Text("Edit")
                         .foregroundColor(DarkThemeMainLightColor)
                         .font(Font.custom("ubuntu-italic", size: 17))
                 }
+                
             }
             .padding([.leading, .trailing], 20)
             .frame(width: 365, height: 50)
             .background(DarkThemeMainCardColor)
             .clipShape(RoundedCorner(radius: 10))
             .shadow(radius: 1)
+            
         }
     }
 }

@@ -14,12 +14,14 @@ class CryptoButtonsViewModel: ObservableObject {
             self.cryptoButtonImage = cryptoButtonImage
         }
         
-        
         func updateCryptoButtonImage(
             newCryptoButtonsImage: String
         ) {
-            cryptoButtonImage = CryptoButtonsImage(cryptoButtonsImage: newCryptoButtonsImage)
+            cryptoButtonImage = CryptoButtonsImage(
+                cryptoButtonsImage: newCryptoButtonsImage
+            )
         }
+        
     }
     
     //MARK: - Foreground Color
@@ -32,7 +34,6 @@ class CryptoButtonsViewModel: ObservableObject {
             self.cryptoButtonForegroundColor = cryptoButtonForegroundColor
         }
         
-        
         func updateCryptoButtonForegroundColor(
             newCryptoButtonsForegroundColor: Color
         ) {
@@ -40,6 +41,7 @@ class CryptoButtonsViewModel: ObservableObject {
                 cryptoButtonsForegroundColor: newCryptoButtonsForegroundColor
             )
         }
+        
     }
     
     //MARK: - Background Color
@@ -51,7 +53,6 @@ class CryptoButtonsViewModel: ObservableObject {
         init(cryptoButtonBackgroundColor: CryptoButtonsBackgroundColor) {
             self.cryptoButtonBackgroundColor = cryptoButtonBackgroundColor
         }
-        
         
         func updateCryptoButtonsBackgroundColor(
             newCryptoButtonsBackgroundColor: Color
@@ -73,12 +74,14 @@ class CryptoButtonsViewModel: ObservableObject {
             self.cryptoButtonFontWeight = cryptoButtonFontWeight
         }
         
-        
         func updateCryptoButtonsFontWeight(
             newCryptoButtonsFontWeight: Font.Weight
         ) {
-            cryptoButtonFontWeight = CryptoButtonsFontWeight(cryptoButtonsFontWeight: newCryptoButtonsFontWeight)
+            cryptoButtonFontWeight = CryptoButtonsFontWeight(
+                cryptoButtonsFontWeight: newCryptoButtonsFontWeight
+            )
         }
+        
     }
     
 }

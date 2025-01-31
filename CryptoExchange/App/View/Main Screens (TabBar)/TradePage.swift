@@ -4,31 +4,50 @@ struct TradePage: View {
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 0) {
+                
                 NavigationBar()
+                
                 Spacer().frame(height: 10)
+                
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(0..<20, id: \.self) { _ in
                             ActiveTradeButton(
-                                coinImage: "bitcoinsign", background: BitcoinBackgroundColor,
-                                coinName: "BTC", coinLine: "crypto-chart-up", betCountCoin: "+98.64782",
-                                profitCoin: "34.1%", profitColor: DarkThemeMainGreenColor
+                                coinImage: "bitcoinsign",
+                                background: BitcoinBackgroundColor,
+                                coinName: "BTC",
+                                coinLine: "crypto-chart-up",
+                                betCountCoin: "+98.64782",
+                                profitCoin: "34.1%",
+                                profitColor: DarkThemeMainGreenColor
                             )
                             ActiveTradeButton(
-                                coinImage: "tengesign", background: EtheriumBackgroundColor,
-                                coinName: "ETH", coinLine: "crypto-chart-down", betCountCoin: "-3.668393",
-                                profitCoin: "25.3%", profitColor: DarkThemeMainRedColor
+                                coinImage: "tengesign",
+                                background: EtheriumBackgroundColor,
+                                coinName: "ETH",
+                                coinLine: "crypto-chart-down",
+                                betCountCoin: "-3.668393",
+                                profitCoin: "25.3%",
+                                profitColor: DarkThemeMainRedColor
                             )
                             ActiveTradeButton(
-                                coinImage: "chineseyuanrenminbisign", background: YCoinBackgroundColor,
-                                coinName: "YTH", coinLine: "crypto-chart-up", betCountCoin: "+342.2344",
-                                profitCoin: "12.8%", profitColor: DarkThemeMainGreenColor
+                                coinImage: "chineseyuanrenminbisign",
+                                background: YCoinBackgroundColor,
+                                coinName: "YTH",
+                                coinLine: "crypto-chart-up",
+                                betCountCoin: "+342.2344",
+                                profitCoin: "12.8%",
+                                profitColor: DarkThemeMainGreenColor
                             )
                         }
                     }
                 }
+                
                 Spacer().frame(height: 90)
-            }.frame(maxWidth: .infinity)
+                
+            }
+            .frame(maxWidth: .infinity)
+            
             Spacer()
         }
         .background(DarkThemeMainBackgroundColor)
@@ -54,14 +73,23 @@ private struct ActiveTradeButton: View {
         Button { isActiveTradeScreenPresented = true }
         label: {
             HStack(alignment: .center) {
+                
                 TradeCoinIcon(image: coinImage, background: background)
+                
                 TradeCoinsTitle(coinName: coinName)
+                
                 Spacer().frame(width: 15)
+                
                 TradeCoinLine(image: coinLine)
+                
                 Spacer()
+                
                 BetCountTradeCoin(count: betCountCoin)
+                
                 Spacer().frame(width: 15)
+                
                 ProfitTradeCoin(profit: profitCoin, color: profitColor)
+                
             }
             .padding([.leading, .trailing], 12)
             .frame(width: 365, height: 60)

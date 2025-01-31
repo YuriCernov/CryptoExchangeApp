@@ -8,10 +8,13 @@ struct SettingsScreensView: View {
     var body: some View {
         VStack {
             VStack {
+                
                 Spacer().frame(height: 50)
+                
                 Text(viewModelTitle.settingsScreensTitle.settingsScreensTitle)
                     .foregroundColor(DarkThemeStandartTextColor)
                     .font(Font.custom("ubuntu-Bold", size: 16))
+                
                 Text(viewModelDescription.settingsScreensDescription.settingsScreensDescription)
                 .foregroundColor(DarkThemeDescriptionTextColor)
                 .font(Font.custom("ubuntu-regular", size: 15))
@@ -21,7 +24,9 @@ struct SettingsScreensView: View {
                 .frame(width: 365, height: .infinity)
                 
                 Spacer()
-            }.frame(maxWidth: .infinity)
+                
+            }
+            .frame(maxWidth: .infinity)
         }
         .background(DarkThemeMainBackgroundColor)
         .ignoresSafeArea(.container, edges: .bottom)

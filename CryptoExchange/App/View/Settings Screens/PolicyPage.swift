@@ -2,7 +2,9 @@ import SwiftUI
 
 struct PolicyPage: View {
     
-    let policyTitle = SettingsScreensTitle(settingsScreensTitle: "Policy")
+    let policyTitle = SettingsScreensTitle(
+        settingsScreensTitle: "Policy"
+    )
     let policyDescription = SettingsScreensDescription(settingsScreensDescription:
             """
             At SecureVault, we offer a Trusted IP Address feature to enhance your account's security and convenience. By designating specific IP addresses as "trusted," you can bypass certain security checks, such as multi-factor authentication, when accessing your account from these locations. This is ideal for users who frequently log in from secure, known networks, such as home or work.
@@ -14,12 +16,21 @@ struct PolicyPage: View {
     var body: some View {
         VStack {
             VStack {
+                
                 Spacer().frame(height: 50)
+                
                 SettingsScreensView(
-                    viewModelTitle: SettingsScreensViewModel.SettingsScreensTitleViewModel(settingsScreensTitle: policyTitle),
-                    viewModelDescription: SettingsScreensViewModel.SettingsScreensDescriptionViewModel(settingsScreensDescription: policyDescription))
+                    viewModelTitle: SettingsScreensViewModel.SettingsScreensTitleViewModel(
+                        settingsScreensTitle: policyTitle
+                    ),
+                    viewModelDescription: SettingsScreensViewModel.SettingsScreensDescriptionViewModel(
+                        settingsScreensDescription: policyDescription
+                    )
+                )
+                
                 Spacer()
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
         }
         .background(DarkThemeMainBackgroundColor)
         .ignoresSafeArea(.container, edges: .bottom)

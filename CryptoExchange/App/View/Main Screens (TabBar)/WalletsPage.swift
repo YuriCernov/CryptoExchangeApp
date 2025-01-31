@@ -4,8 +4,11 @@ struct WalletsPage: View {
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 0) {
+                
                 NavigationBar()
+                
                 Spacer().frame(height: 10)
+                
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 20) {
                         Cards(image: "card1")
@@ -15,8 +18,11 @@ struct WalletsPage: View {
                         AddCard()
                     }
                 }
+                
                 Spacer().frame(height: 90)
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
+            
             Spacer()
         }
         .background(DarkThemeMainBackgroundColor)

@@ -33,16 +33,21 @@ struct TotalBalanceView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
+                
                 TotalBalanceCard(viewModel: TotalBalanceCardViewModel(
                     coinBalance: balance1,
                     exchangeRate: exchange1,
                     bullBearRating: bullBear1)
-                ).padding(.leading, 20)
+                )
+                .padding(.leading, 20)
+                
                 TotalBalanceCard(viewModel: TotalBalanceCardViewModel(
                     coinBalance: balance2,
                     exchangeRate: exchange2,
                     bullBearRating: bullBear2)
-                ).padding(.trailing, 20)
+                )
+                .padding(.trailing, 20)
+                
             }
         }
     }

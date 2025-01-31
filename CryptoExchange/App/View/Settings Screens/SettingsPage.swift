@@ -15,7 +15,8 @@ struct SettingsPage: View {
                     SecurityPhrase()
                     Policy()
                     CommentsCard()
-                }.frame(maxWidth: .infinity)
+                }
+                .frame(maxWidth: .infinity)
             }
         }
         .background(DarkThemeMainBackgroundColor)
@@ -33,9 +34,15 @@ private struct MainSettings: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
+                
                 AuthenticatorAppButton(isOn1: $isOn1)
-                Divider().frame(height: 1).background(DarkThemeDividerColor)
+                
+                Divider()
+                    .frame(height: 1)
+                    .background(DarkThemeDividerColor)
+                
                 VoiceOrTextMessageButton(isOn2: $isOn2)
+                
             }
             .padding([.leading, .trailing, .top, .bottom], 20)
             .background(DarkThemeMainCardColor)
@@ -51,16 +58,22 @@ private struct AuthenticatorAppButton: View {
     @Binding var isOn1: Bool
     
     var body: some View {
+        
         HStack {
             IconStyle(image: "shield.lefthalf.filled.badge.checkmark")
             Toggle("Authenticator App", isOn: $isOn1)
                 .foregroundColor(DarkThemeStandartTextColor)
                 .font(Font.custom("ubuntu-bold", size: 17))
-        }.padding(.bottom, 10)
+        }
+        .padding(.bottom, 10)
         
         HStack {
-            MainBottomTextStyle(text: "Prevent unauthorized access and used for withdrawals, and other security purposes.")
-        }.padding(.bottom, 20)
+            MainBottomTextStyle(
+                text: "Prevent unauthorized access and used for withdrawals, and other security purposes."
+            )
+        }
+        .padding(.bottom, 20)
+        
     }
 }
 
@@ -69,16 +82,20 @@ private struct VoiceOrTextMessageButton: View {
     @Binding var isOn2: Bool
     
     var body: some View {
+        
         HStack {
             IconStyle(image: "ellipsis.bubble.fill")
             Toggle("Voice or Text Message", isOn: $isOn2)
                 .foregroundColor(DarkThemeStandartTextColor)
                 .font(Font.custom("ubuntu-bold", size: 17))
-        }.padding(.top, 20).padding(.bottom, 10)
+        }
+        .padding(.top, 20)
+        .padding(.bottom, 10)
         
         HStack {
             MainBottomTextStyle(text: "Prevent unauthorized access and used for withdrawals, and other security purposes.")
         }
+        
     }
 }
 
@@ -123,6 +140,7 @@ private struct Card<Destination: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
             HStack {
+                
                 Button { isPresented = true }
                 label: {
                     MainTextStyle(text: cardMainText)
@@ -130,7 +148,9 @@ private struct Card<Destination: View>: View {
                 }.sheet(isPresented: $isPresented) {
                     destination
                 }
+                
                 DateTextStyle(dateText: "(Last Update: \(cardDateText)")
+                
             }
             BottomTextStyle(bottomText: cardBottomText)
         }

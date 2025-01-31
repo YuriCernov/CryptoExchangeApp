@@ -14,12 +14,21 @@ struct SecurityPhrasePage: View {
     var body: some View {
         VStack {
             VStack {
+                
                 Spacer().frame(height: 50)
+                
                 SettingsScreensView(
-                    viewModelTitle: SettingsScreensViewModel.SettingsScreensTitleViewModel(settingsScreensTitle: securityPhraseTitle),
-                    viewModelDescription: SettingsScreensViewModel.SettingsScreensDescriptionViewModel(settingsScreensDescription: securityPhraseDescription))
+                    viewModelTitle: SettingsScreensViewModel.SettingsScreensTitleViewModel(
+                        settingsScreensTitle: securityPhraseTitle
+                    ),
+                    viewModelDescription: SettingsScreensViewModel.SettingsScreensDescriptionViewModel(
+                        settingsScreensDescription: securityPhraseDescription
+                    )
+                )
+                
                 Spacer()
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
         }
         .background(DarkThemeMainBackgroundColor)
         .ignoresSafeArea(.container, edges: .bottom)

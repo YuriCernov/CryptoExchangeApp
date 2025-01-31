@@ -19,12 +19,13 @@ class SettingsScreensViewModel: ObservableObject {
         init(settingsScreensTitle: SettingsScreensTitle) {
             self.settingsScreensTitle = settingsScreensTitle
         }
-        
-        
+
         func updateSettingsScreensTitle(
             newSettingsScreensTitle: String
         ) {
-            settingsScreensTitle = SettingsScreensTitle(settingsScreensTitle: newSettingsScreensTitle)
+            settingsScreensTitle = SettingsScreensTitle(
+                settingsScreensTitle: newSettingsScreensTitle
+            )
         }
         
     }
@@ -39,11 +40,12 @@ class SettingsScreensViewModel: ObservableObject {
             self.settingsScreensDescription = settingsScreensDescription
         }
         
-        
         func updateSettingsScreensDescription(
             newSettingsScreensDescription: String
         ) {
-            settingsScreensDescription = SettingsScreensDescription(settingsScreensDescription: newSettingsScreensDescription)
+            settingsScreensDescription = SettingsScreensDescription(
+                settingsScreensDescription: newSettingsScreensDescription
+            )
         }
         
     }

@@ -2,7 +2,9 @@ import SwiftUI
 
 struct BackupCodesPage: View {
     
-    let backupCodesTitle = SettingsScreensTitle(settingsScreensTitle: "Backup Codes")
+    let backupCodesTitle = SettingsScreensTitle(
+        settingsScreensTitle: "Backup Codes"
+    )
     let backupCodesDescription = SettingsScreensDescription(settingsScreensDescription: """
             At SecureVault, we provide backup codes as an additional layer of security. Backup codes are a set of single-use codes that you can generate and store securely, allowing you to access your account in case you’re unable to use your primary authentication method, such as multi-factor authentication (MFA) or a lost device.
 
@@ -12,15 +14,23 @@ struct BackupCodesPage: View {
     var body: some View {
         VStack {
             VStack {
+                
                 Spacer().frame(height: 50)
+                
                 SettingsScreensView(
                     viewModelTitle:
-                        SettingsScreensViewModel.SettingsScreensTitleViewModel(settingsScreensTitle: backupCodesTitle),
+                        SettingsScreensViewModel.SettingsScreensTitleViewModel(
+                            settingsScreensTitle: backupCodesTitle
+                        ),
                     viewModelDescription:
-                        SettingsScreensViewModel.SettingsScreensDescriptionViewModel(settingsScreensDescription: backupCodesDescription))
+                        SettingsScreensViewModel.SettingsScreensDescriptionViewModel(
+                            settingsScreensDescription: backupCodesDescription
+                        )
+                )
                 
                 Spacer()
-            }.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
         }
         .background(DarkThemeMainBackgroundColor)
         .ignoresSafeArea(.container, edges: .bottom)

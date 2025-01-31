@@ -5,12 +5,14 @@ class CommentsAPI {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/comments") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
+            
             if let error = error {
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
                 return
             }
+            
             guard let data = data else {
                 DispatchQueue.main.async {
                     completion(.failure(NSError(domain: "DataError", code: -1, userInfo: nil)))
@@ -28,6 +30,8 @@ class CommentsAPI {
                     completion(.failure(error))
                 }
             }
-        } .resume()
+            
+        }
+        .resume()
     }
 }

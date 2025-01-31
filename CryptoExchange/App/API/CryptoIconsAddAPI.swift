@@ -3,6 +3,7 @@ import SwiftUI
 
 class CryptoIconsAddAPI {
     func fetchCryptos(completion: @escaping ([CryptoIconsAddModel]?) -> Void) {
+        
         guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
             completion(nil)
             return
@@ -25,5 +26,6 @@ class CryptoIconsAddAPI {
             }
         }
         task.resume()
+        
     }
 }

@@ -6,10 +6,13 @@ struct AppView: View {
     
     let tabs = [ "Home", "TradeHistory", "Wallets", "Trade" ]
     
-    init() { UITabBar.appearance().isHidden = true }
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
     
     var body: some View {
         ZStack(alignment: .bottom) {
+            
             TabView(selection: $selectTab) {
                 HomePage()
                     .tag("Home")
@@ -23,9 +26,13 @@ struct AppView: View {
             
             HStack {
                 ForEach(tabs, id: \.self) { tab in
+                    
                     Spacer()
+                    
                     TabBarItem(tab: tab, selected: $selectTab)
+                    
                     Spacer()
+                    
                 }
             }
             .padding(.top, 20)
@@ -34,6 +41,7 @@ struct AppView: View {
             .background(DarkThemeMainBackgroundColor)
             .clipShape(RoundedCorner(radius: 30))
             .shadow(radius: 5)
+            
         }
     }
 }
@@ -47,9 +55,14 @@ struct TabBarItem: View {
     
     var body: some View {
         ZStack {
-            Button { withAnimation(.spring()) { selected = tab }}
+            Button { withAnimation(.spring()) {
+                    selected = tab
+                }
+            }
             label: {
-                Image(tab).resizable().frame(width: 20, height: 24)
+                Image(tab)
+                    .resizable()
+                    .frame(width: 20, height: 24)
             }
         }
         .opacity(selected == tab ? 1 : 0.7)

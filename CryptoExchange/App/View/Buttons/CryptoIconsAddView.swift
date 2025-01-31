@@ -8,6 +8,7 @@ struct CryptoIconsAddView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
                 if viewModel.isLoading {
                     ZStack {
                         Rectangle()
@@ -50,12 +51,14 @@ struct CryptoIconsAddView: View {
                             .listRowSeparator(.visible)
                             .listRowSeparatorTint(DarkThemeDividerColor)
                             .listRowBackground(DarkThemeMainCardColor)
-                        }.scrollContentBackground(.hidden)
+                        }
+                        .scrollContentBackground(.hidden)
                     }
                 }
             }
             .navigationTitle("All Crypto")
             .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
 }

@@ -20,6 +20,7 @@ class CryptoIconsAddViewModel: ObservableObject {
         
         api.fetchCryptos { [weak self] cryptos in
             DispatchQueue.main.async {
+                
                 self?.isLoading = false
                 
                 if let cryptos = cryptos {

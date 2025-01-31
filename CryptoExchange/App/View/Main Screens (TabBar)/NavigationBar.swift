@@ -3,16 +3,23 @@ import SwiftUI
 struct NavigationBar: View {
     var body: some View {
         HStack(spacing: 0) {
+            
             Rectangle().fill(.clear).frame(maxWidth: 130)
+            
             NavigationBarIcon()
+            
                 HStack {
                     NavigationBarSettingsButton()
+                    
                     Spacer()
+                    
                     NavigationBarAccauntIconButton()
                 }
                 .padding(.trailing, 15).padding(.leading, 35)
                 .frame(width: 130)
-        }.frame(height: 56)
+            
+        }
+        .frame(height: 56)
     }
 }
 
@@ -27,7 +34,8 @@ struct NavigationBarIcon: View {
             Text("B           ")
                 .foregroundColor(LogoSecondColor)
                 .font(Font.custom("ubuntu-Bold", size: 18))
-        }.frame(width: 130)
+        }
+        .frame(width: 130)
     }
 }
 
