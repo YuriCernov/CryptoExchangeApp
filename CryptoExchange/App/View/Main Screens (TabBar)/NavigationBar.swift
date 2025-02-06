@@ -26,12 +26,18 @@ struct NavigationBar: View {
 //MARK: - Navigation Bar Icon
 
 struct NavigationBarIcon: View {
+    
+    private enum ConstantsNavigationBarIcon {
+        static let nameName = "Bstock"
+        static let nameLetter = "B           "
+    }
+    
     var body: some View {
         ZStack(alignment: .center) {
-            Text("Bstock")
+            Text(ConstantsNavigationBarIcon.nameName)
                 .foregroundColor(DarkThemeLogoFirstColor)
                 .font(Font.custom("ubuntu-Bold", size: 18))
-            Text("B           ")
+            Text(ConstantsNavigationBarIcon.nameLetter)
                 .foregroundColor(LogoSecondColor)
                 .font(Font.custom("ubuntu-Bold", size: 18))
         }

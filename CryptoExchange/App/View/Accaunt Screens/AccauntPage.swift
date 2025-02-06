@@ -118,16 +118,24 @@ private struct ProfilePictureEditButton: View {
 //MARK: - PROFILE NAME / SURNAME
 
 private struct ProfileNameSurnameTitle: View {
+    
+    private enum ConstantsNameSurname {
+        static let nameName = "Name"
+        static let nameReal = "Yuri"
+        static let surnameSurname = "Surname"
+        static let surnameReal = "Cernov"
+    }
+    
     var body: some View {
         VStack(spacing: 5) {
             MainCardStyle(
-                mainText: "Name",
-                descriptionText: "Yuri",
+                mainText: ConstantsNameSurname.nameName,
+                descriptionText: ConstantsNameSurname.nameReal,
                 destination: EditProfileName()
             )
             MainCardStyle(
-                mainText: "Surname",
-                descriptionText: "Cernov",
+                mainText: ConstantsNameSurname.surnameSurname,
+                descriptionText: ConstantsNameSurname.surnameReal,
                 destination: EditProfileSurname()
             )
         }
@@ -149,16 +157,24 @@ private struct EditProfileSurname: View {
 //MARK: - PROFILE EMAIL
 
 private struct ProfileEMailTitle: View {
+    
+    private enum ConstantsEMail {
+        static let emailEmail = "E-Mail"
+        static let emailReal = "jurij.cernovs@gmail.com"
+        static let secondEmailEmail = "Second E-Mail"
+        static let secondEmailReal = "cernovyury@gmail.com"
+    }
+    
     var body: some View {
         VStack(spacing: 5) {
             MainCardStyle(
-                mainText: "E-Mail",
-                descriptionText: "jurij.cernovs@gmail.com",
+                mainText: ConstantsEMail.emailEmail,
+                descriptionText: ConstantsEMail.emailReal,
                 destination: EditProfileMail()
             )
             MainCardStyle(
-                mainText: "Second E-Mail",
-                descriptionText: "cernovyury@gmail.com",
+                mainText: ConstantsEMail.secondEmailEmail,
+                descriptionText: ConstantsEMail.secondEmailReal,
                 destination: EditSecondProfileMail()
             )
         }
@@ -180,16 +196,24 @@ private struct EditSecondProfileMail: View {
 //MARK: - PASSWORD AND ID
 
 private struct ProfilePasswordIdTitle: View {
+    
+    private enum ConstantsPasswordId {
+        static let passwordPassword = "Password"
+        static let passwordReal = "**************"
+        static let idId = "ID"
+        static let idReal = "84bnf939d388"
+    }
+    
     var body: some View {
         VStack(spacing: 5) {
             MainCardStyle(
-                mainText: "Password",
-                descriptionText: "**************",
+                mainText: ConstantsPasswordId.passwordPassword,
+                descriptionText: ConstantsPasswordId.passwordReal,
                 destination: EditProfilePassword()
             )
             MainCardStyle(
-                mainText: "ID",
-                descriptionText: "84bnf939d388",
+                mainText: ConstantsPasswordId.idId,
+                descriptionText: ConstantsPasswordId.idReal,
                 destination: EditProfileId()
             )
         }
@@ -211,15 +235,21 @@ private struct EditProfileId: View {
 //MARK: - PROFILE REGISTER DATE
 
 private struct ProfileRegisteredDate: View {
+    
+    private enum ConstantsRegisteredDate {
+        static let registeredDateRegisteredDate = "Registered Date"
+        static let registeredDateReal = "18.05.2017"
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             
-            Text("Registered Date")
+            Text(ConstantsRegisteredDate.registeredDateRegisteredDate)
                 .foregroundColor(DarkThemeDescriptionTextColor)
                 .font(Font.custom("ubuntu-regular", size: 12))
             
             HStack {
-                Text("18.05.2017")
+                Text(ConstantsRegisteredDate.registeredDateReal)
                     .foregroundColor(DarkThemeStandartTextColor)
                     .font(Font.custom("ubuntu-regular", size: 17))
                 

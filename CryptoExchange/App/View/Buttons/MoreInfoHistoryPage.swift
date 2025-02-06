@@ -50,13 +50,19 @@ private struct MoreInfoHistory: View {
 }
 
 private struct OrderIdTitle: View {
+    
+    private enum ConstantsOrderId {
+        static let orderIdOrderId = "Order ID :"
+        static let orderIdReal = "0001320#4e5"
+    }
+    
     var body: some View {
         HStack {
-            Text("Order ID :")
+            Text(ConstantsOrderId.orderIdOrderId)
             
             Spacer()
             
-            Text("0001320#4e5")
+            Text(ConstantsOrderId.orderIdReal)
         }
         .foregroundColor(DarkThemeStandartTextColor)
         .font(Font.custom("ubuntu-regular", size: 16))
@@ -64,13 +70,19 @@ private struct OrderIdTitle: View {
 }
 
 private struct PriceTitle: View {
+    
+    private enum ConstantsPrice {
+        static let pricePrice = "Price :"
+        static let priceReal = "0.002300 BTC"
+    }
+    
     var body: some View {
         HStack {
-            Text("Price :")
+            Text(ConstantsPrice.pricePrice)
             
             Spacer()
             
-            Text("0.002300 BTC")
+            Text(ConstantsPrice.priceReal)
         }
         .foregroundColor(DarkThemeStandartTextColor)
         .font(Font.custom("ubuntu-regular", size: 16))
@@ -78,13 +90,19 @@ private struct PriceTitle: View {
 }
 
 private struct DateTitle: View {
+    
+    private enum ConstantsDate {
+        static let dateDate = "Date :"
+        static let dateReal = "2018.01.24 at 08:04:05"
+    }
+    
     var body: some View {
         HStack {
-            Text("Date :")
+            Text(ConstantsDate.dateDate)
             
             Spacer()
             
-            Text("2018.01.24 at 08:04:05")
+            Text(ConstantsDate.dateReal)
         }
         .foregroundColor(DarkThemeStandartTextColor)
         .font(Font.custom("ubuntu-regular", size: 16))
@@ -92,13 +110,19 @@ private struct DateTitle: View {
 }
 
 private struct RequestedTitle: View {
+    
+    private enum ConstantsRequested {
+        static let requestedRequested = "Requested :"
+        static let requestedReal = "150"
+    }
+    
     var body: some View {
         HStack {
-            Text("Requested :")
+            Text(ConstantsRequested.requestedRequested)
             
             Spacer()
             
-            Text("150")
+            Text(ConstantsRequested.requestedReal)
         }
         .foregroundColor(DarkThemeStandartTextColor)
         .font(Font.custom("ubuntu-regular", size: 16))
@@ -106,13 +130,19 @@ private struct RequestedTitle: View {
 }
 
 private struct CanceledTitle: View {
+    
+    private enum ConstantsCanceled {
+        static let canceledCanceled = "Canceled :"
+        static let canceledReal = "10 (10%)"
+    }
+    
     var body: some View {
         HStack {
-            Text("Canceled :")
+            Text(ConstantsCanceled.canceledCanceled)
             
             Spacer()
             
-            Text("10 (10%)")
+            Text(ConstantsCanceled.canceledReal)
         }
         .foregroundColor(DarkThemeStandartTextColor)
         .font(Font.custom("ubuntu-regular", size: 16))
@@ -120,13 +150,19 @@ private struct CanceledTitle: View {
 }
 
 private struct FilledTitle: View {
+    
+    private enum ConstantsFilled {
+        static let filledFilled = "Filled :"
+        static let filledReal = "140 (90%)"
+    }
+    
     var body: some View {
         HStack {
-            Text("Filled :")
+            Text(ConstantsFilled.filledFilled)
             
             Spacer()
             
-            Text("140 (90%)")
+            Text(ConstantsFilled.filledReal)
         }
         .foregroundColor(DarkThemeStandartTextColor)
         .font(Font.custom("ubuntu-regular", size: 16))
@@ -134,27 +170,35 @@ private struct FilledTitle: View {
 }
 
 private struct MethodTitle: View {
+    
+    private enum ConstantsMethod {
+        static let methodMethod = "Method :"
+        static let methodMobile = "Mobile"
+        static let methodWeb = "Web"
+        static let methodApi = "API"
+    }
+    
     var body: some View {
         HStack {
             
-            Text("Method :")
+            Text(ConstantsMethod.methodMethod)
                 .foregroundColor(DarkThemeStandartTextColor)
                 .font(Font.custom("ubuntu-regular", size: 16))
             
             Spacer()
             
             HStack(alignment: .bottom, spacing: 18) {
-                Text("Mobile")
+                Text(ConstantsMethod.methodMobile)
                     .foregroundColor(DarkThemeMainLightColor)
                     .font(Font.custom("ubuntu-bold", size: 15))
-                Text("Web")
+                Text(ConstantsMethod.methodWeb)
                     .foregroundColor(DarkThemeMainBlackColor)
                     .font(Font.custom("ubuntu-bold", size: 15))
                     .frame(width: 56, height: 20)
                     .background(DarkThemeMainGreenColor)
                     .clipShape(RoundedCorner(radius: 5))
                     .shadow(radius: 1)
-                Text("API")
+                Text(ConstantsMethod.methodApi)
                     .foregroundColor(DarkThemeMainLightColor)
                     .font(Font.custom("ubuntu-bold", size: 15))
             }

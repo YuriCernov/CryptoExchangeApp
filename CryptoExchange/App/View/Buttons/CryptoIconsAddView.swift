@@ -5,6 +5,11 @@ struct CryptoIconsAddView: View {
     @State var isCryptoIconsAddMoreInfoPresented = false
     @StateObject private var viewModel = CryptoIconsAddViewModel()
     
+    private enum ConstantsIconsAdd {
+        static let navigationTitle = "All Crypto"
+        static let loadingLoading = "Loading..."
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -14,7 +19,7 @@ struct CryptoIconsAddView: View {
                         Rectangle()
                             .foregroundColor(DarkThemeMainBackgroundColor)
                             .ignoresSafeArea()
-                        ProgressView("Loading...")
+                        ProgressView(ConstantsIconsAdd.loadingLoading)
                             .foregroundColor(DarkThemeStandartTextColor)
                     }
                 } else if let errorMessage = viewModel.errorMessage {
@@ -56,7 +61,7 @@ struct CryptoIconsAddView: View {
                     }
                 }
             }
-            .navigationTitle("All Crypto")
+            .navigationTitle(ConstantsIconsAdd.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             
         }
