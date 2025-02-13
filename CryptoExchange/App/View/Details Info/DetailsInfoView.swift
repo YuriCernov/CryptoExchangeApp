@@ -243,32 +243,46 @@ private struct Graphic: View {
 //MARK: - Graphic Dates
 
 private struct GraphicDates: View {
+    
+    private enum Constants {
+        static let dateZeroText = "Jun 20"
+        static let dateOneText = "Jun 21"
+        static let dateTwoText = "Jun 22"
+        static let dateThreeText = "Jun 23"
+        static let dateFourText = "Jun 24"
+        static let dateFiveText = "Jun 25"
+        
+        static let textFontName = "ubuntu-regular"
+        static let textSize: CGFloat = 10
+        static let hstackSpacing: CGFloat = 28
+    }
+    
     var body: some View {
-        HStack(alignment: .bottom, spacing: 28) {
+        HStack(alignment: .bottom, spacing: Constants.hstackSpacing) {
             
-            Text("Jun 20")
+            Text(Constants.dateZeroText)
                 .foregroundColor(DarkThemeSecondTextColor)
-                .font(Font.custom("ubuntu-regular", size: 10))
+                .font(Font.custom(Constants.textFontName, size: Constants.textSize))
             
-            Text("Jun 21")
+            Text(Constants.dateOneText)
                 .foregroundColor(DarkThemeSecondTextColor)
-                .font(Font.custom("ubuntu-regular", size: 10))
+                .font(Font.custom(Constants.textFontName, size: Constants.textSize))
             
-            Text("Jun 22")
+            Text(Constants.dateTwoText)
                 .foregroundColor(DarkThemeSecondTextColor)
-                .font(Font.custom("ubuntu-regular", size: 10))
+                .font(Font.custom(Constants.textFontName, size: Constants.textSize))
             
-            Text("Jun 23")
+            Text(Constants.dateThreeText)
                 .foregroundColor(DarkThemeSecondTextColor)
-                .font(Font.custom("ubuntu-regular", size: 10))
+                .font(Font.custom(Constants.textFontName, size: Constants.textSize))
             
-            Text("Jun 24")
+            Text(Constants.dateFourText)
                 .foregroundColor(DarkThemeSecondTextColor)
-                .font(Font.custom("ubuntu-regular", size: 10))
+                .font(Font.custom(Constants.textFontName, size: Constants.textSize))
             
-            Text("Jun 25")
+            Text(Constants.dateFiveText)
                 .foregroundColor(DarkThemeSecondTextColor)
-                .font(Font.custom("ubuntu-regular", size: 10))
+                .font(Font.custom(Constants.textFontName, size: Constants.textSize))
             
         }
     }
