@@ -27,19 +27,21 @@ struct NavigationBar: View {
 
 struct NavigationBarIcon: View {
     
-    private enum ConstantsNavigationBarIcon {
+    private enum Constants {
         static let nameName = "Bstock"
         static let nameLetter = "B           "
+        static let textName = "ubuntu-Bold"
+        static let textSize: CGFloat = 18
     }
     
     var body: some View {
         ZStack(alignment: .center) {
-            Text(ConstantsNavigationBarIcon.nameName)
+            Text(Constants.nameName)
                 .foregroundColor(DarkThemeLogoFirstColor)
-                .font(Font.custom("ubuntu-Bold", size: 18))
-            Text(ConstantsNavigationBarIcon.nameLetter)
+                .font(Font.custom(Constants.textName, size: Constants.textSize))
+            Text(Constants.nameLetter)
                 .foregroundColor(LogoSecondColor)
-                .font(Font.custom("ubuntu-Bold", size: 18))
+                .font(Font.custom(Constants.textName, size: Constants.textSize))
         }
         .frame(width: 130)
     }
